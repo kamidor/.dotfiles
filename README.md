@@ -1,26 +1,33 @@
+- [How to Manage dotfile](#how-to-manage-dotfile)
 - [Ubuntu](#ubuntu)
-  - [How to Manage dotfile](#how-to-manage-dotfile)
   - [Install Software](#install-software)
     - [20.04+](#2004)
     - [18.04](#1804)
   - [ZSH](#zsh)
   - [VIM](#vim)
 
-# Ubuntu
-
-## How to Manage dotfile
-
+# How to Manage dotfile
 ```
 https://www.atlassian.com/git/tutorials/dotfiles
 ```
 
 ---
 
+# Ubuntu
+
 ## Install Software
 
+[Vor der Installation](#how-to-manage-dotfiles)
+
+
 ```
-sudo apt install fonts-powerline flameshot nodejs \
-npm j4-dmenu-desktop i3-gaps pavucontrol
+sudo apt install fonts-powerline flameshot nodejs npm 4-dmenu-desktop i3-gaps pavucontrol git chromium
+```
+
+```
+sudo snap install --classic code intellij-idea-ultimate phpstorm pycharm-professional go
+
+sudo snap install rocketchat-desktop bitwarden discord drawio
 ```
 
 ```
