@@ -1,3 +1,11 @@
+- [Ubuntu](#ubuntu)
+  - [How to Manage dotfile](#how-to-manage-dotfile)
+  - [Install Software](#install-software)
+    - [20.04+](#2004)
+    - [18.04](#1804)
+  - [ZSH](#zsh)
+  - [VIM](#vim)
+
 # Ubuntu
 
 ## How to Manage dotfile
