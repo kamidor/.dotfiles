@@ -56,16 +56,25 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf ~/.fzf/install
 
 ## ZSH
 
+### Change shell to ZSH:
+
+```
+chsh -s /bin/zsh
+```
+
+Oh My Zsh
 ```
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 ```
 
+You should use:
 ```
 git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
 ```
 
+ZshNotes
 ```
-chsh -s /bin/zsh
+git clone https://github.com/jameshgrn/zshnotes/ ~/.oh-my-zsh/custom/plugins/zshnotes
 ```
 
 ---
