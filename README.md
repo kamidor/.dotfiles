@@ -62,6 +62,13 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf ~/.fzf/install
 chsh -s /bin/zsh
 ```
 
+### Theme
+```
+wget -P $ZSH_CUSTOM/themes/ "https://raw.githubusercontent.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme"
+```
+
+### Plugins
+
 Oh My Zsh
 ```
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
