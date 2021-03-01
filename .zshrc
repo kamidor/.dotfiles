@@ -14,7 +14,7 @@ alias ytaudio="youtube-dl -f bestaudio --download-archive $HOME/.config/download
 
 function build() 
 {
-    cd $HOME/buildout/buildout-saar
+    cd $HOME/buildout-saar
     . bin/activate
     ssh-add -t 36000 $HOME/.ssh/id_rsa
     clear
