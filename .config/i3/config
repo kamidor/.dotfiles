@@ -3,16 +3,10 @@
 # Autostart
 exec --no-startup-id $HOME/keybinds.sh
 exec --no-startup-id xsetroot -solid "#202021"
-exec --no-startup-id xrandr \
---output DP-4 --auto --primary \
---output DP-3 --off \
---output DP-1 --off
-
+exec --no-startup-id xrandr --output DP-2-2 --left-of eDP-1
 
 # Custom Keybinds
-bindsym $mod+Escape exec --no-startup-id /home/client/Documents/scripts/nomonitor.sh
-bindsym $mod+F1 exec --no-startup-id  /home/client/Documents/scripts/monitor.sh
-bindsym $mod+F2 exec --no-startup-id /home/client/Documents/scripts/monitor2.sh 
+bindsym $mod+ctrl+l exec --no-startup-id i3lock -f -c 000000
 bindsym Print exec flameshot gui
 
 # Create Log out, Reboot, Poweroff bindings
@@ -60,7 +54,7 @@ floating_modifier $mod
 set $mod Mod4
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal 
 
 # kill focused window
 bindsym $mod+Shift+q kill
