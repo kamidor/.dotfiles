@@ -2,6 +2,15 @@ syntax on
 set nowrap
 set encoding=utf8
 
+" Enable 24-bit true colors if your terminal supports it.
+if (has("termguicolors"))
+  " https://github.com/vim/vim/issues/993#issuecomment-255651605
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+  set termguicolors
+endif
+
 " Line number
 set number
 
@@ -23,10 +32,8 @@ set incsearch
 set ignorecase
 set smartcase
 
-
 " Runs ident.vim script at startup
 runtime! indent.vim
-
 
 " Install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -48,15 +55,11 @@ Plug 'scrooloose/nerdtree'
 " Status bar
 Plug 'bling/vim-airline'
 
-" Fullpath fuzzy search
-Plug 'ctrlpvim/ctrlp.vim'
 
-" 
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 " Syntax Checkecker
 Plug 'vim-syntastic/syntastic'
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -67,15 +70,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_check_on_wq = 0
 
-" Close Brackets etc.
-Plug 'Raimondi/delimitMate'
 
-" -------------------------------
-call plug#end()
-
-" Plugin Settings 
-
-" let g:mkdp_auto_start = 1
+" Fuzzy Search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug '~/.fzf'
 
 "-- NERDTree --
 let NERDTreeShowHidden=1
@@ -84,15 +83,10 @@ map <C-b> :NERDTreeToggle
 " i3 Syntax
 Plug 'mboughaba/i3config.vim'
 
-" Enable 24-bit true colors if your terminal supports it.
-if (has("termguicolors"))
-  " https://github.com/vim/vim/issues/993#issuecomment-255651605
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" Close Brackets etc.
+Plug 'Raimondi/delimitMate'
 
-  set termguicolors
-endif
+" -------------------------------
+call plug#end()
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug '~/.fzf'
+
