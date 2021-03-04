@@ -46,15 +46,21 @@ endif
 call plug#begin('~/.vim/plugged')
 " -------------------------------
 Plug 'godlygeek/tabular'
+
 "
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 let g:mkdp_open_to_the_world = 1
+
 " File explorer 
 Plug 'scrooloose/nerdtree'
+let NERDTreeShowHidden=1
+autocmd BufWinEnter * silent NERDTreeMirror
+nnoremap <C-f> :NERDTreeFind<CR>
+map <C-b> :NERDTreeToggle
+nnoremap <C-n> :NERDTreeFocus<CR>
 
 " Status bar
 Plug 'bling/vim-airline'
-
 
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
@@ -70,15 +76,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_check_on_wq = 0
 
-
 " Fuzzy Search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug '~/.fzf'
-
-"-- NERDTree --
-let NERDTreeShowHidden=1
-map <C-b> :NERDTreeToggle
 
 " i3 Syntax
 Plug 'mboughaba/i3config.vim'
@@ -86,7 +87,12 @@ Plug 'mboughaba/i3config.vim'
 " Close Brackets etc.
 Plug 'Raimondi/delimitMate'
 
+" Markdown Syntax
+Plug 'plasticboy/vim-markdown'
+
+Plug 'neomake/neomake' 
+
 " -------------------------------
 call plug#end()
 
-
+call neomake#configure#automake('rw', 1000)

@@ -4,18 +4,19 @@ ZSH_THEME="bullet-train"
 plugins=(git)
 plugins=(zshnotes)
 plugins=(you-should-use $plugins)
+plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias ls="ls -lah"
+alias ls="ls -ltra"
 
 function build() 
 {
+    ssh-agent zsh
+    ssh-add -t 36000 $HOME/.ssh/id_rsa
     cd $HOME/buildout-saar
     . bin/activate
-    ssh-add -t 36000 $HOME/.ssh/id_rsa
-    clear
 }
 
 # fuzzy kill process
