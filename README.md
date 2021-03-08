@@ -22,17 +22,17 @@ https://www.atlassian.com/git/tutorials/dotfiles
 
 ## Install basics
     sudo apt install fonts-powerline flameshot 4-dmenu-desktop i3-gaps pavucontrol git chromium
-
+    #
     sudo snap install --classic code intellij-idea-ultimate phpstorm pycharm-professional go
-
+    #
     sudo snap install rocketchat-desktop bitwarden discord drawio
 
 nodejs
-    curl -sL install-node.now.sh/lts | bash
+    curl -sL install-node.now.sh/lts | sudo bash
 
 FZF
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf ~/.fzf/install
-
+    #
     npm install -g terminalizer
 
 ### 20.04+
@@ -40,10 +40,10 @@ FZF
 
 ### 18.04
     sudo snap install ripgrep
+    #
     sudo apt remove vim
+    #
     git clone https://github.com/vim/vim.git $HOME/temp/ && \
-
-
 
 ---
 
@@ -51,10 +51,10 @@ FZF
 ### Dracula
     curl -fLo $HOME/.theme/Dracula.zip --create-dirs \
     https://github.com/dracula/gtk/archive/master.zip
-
+    #
     curl -fLo $HOME/.icons/Dracula.zip --create-dirs \                               
     https://github.com/dracula/gtk/files/5214870/Dracula.zip
-
+    #
     gunzip
 ## Terminal
 ### Color Scheme

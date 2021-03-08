@@ -14,7 +14,9 @@ autocmd BufWinEnter * silent NERDTreeMirror
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
-"""""""""""""-- COC -- """"""""
+
+"           COC
+" -------------------------------
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 if has("patch-8.1.1564")
@@ -55,16 +57,13 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
-
-""""""""""""""""""""""""""""""""""""""""""""
+" -------------------------------
 
 inoremap jk <ESC>
 let mapleader = ","
 
 map <C-b> :NERDTreeToggle
 nnoremap <leader>n :NERDTreeFocus<CR>
-
-
 
 " Fix spellings
 set spell spelllang=en_us
@@ -80,7 +79,6 @@ set updatetime=300
 set nobackup
 set nowritebackup
 
-
 syntax on
 
 set relativenumber 
@@ -95,7 +93,7 @@ set expandtab
 set autoindent 
 runtime! indent.vim
 
-" Make search case insensitive
+" Search behavior
 set incsearch 
 set ignorecase
 set smartcase
@@ -108,9 +106,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+
 " Loads Plugins
-call plug#begin('~/.vim/plugged')
 " -------------------------------
+call plug#begin('~/.vim/plugged')
+
 Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'scrooloose/nerdtree'
@@ -128,8 +128,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'mboughaba/i3config.vim'
 
-
 call plug#end()
+" -------------------------------
 
 colorscheme dracula
 

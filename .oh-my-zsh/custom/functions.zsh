@@ -1,3 +1,9 @@
+function build() 
+{
+    cd $HOME/buildout-saar
+    . bin/activate
+}
+
 # fuzzy kill process
 fkill() {
   local pid
@@ -8,3 +14,5 @@ fkill() {
     echo $pid | xargs kill -${1:-9}
   fi
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
