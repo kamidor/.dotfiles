@@ -18,42 +18,32 @@ https://www.atlassian.com/git/tutorials/dotfiles
 ## Install Software
 
 [Vor der Installation](#how-to-manage-dotfiles)
+    mkdir $HOME/temp
 
+## Install basics
+    sudo apt install fonts-powerline flameshot 4-dmenu-desktop i3-gaps pavucontrol git chromium
 
-```
-sudo apt install fonts-powerline flameshot nodejs npm 4-dmenu-desktop i3-gaps pavucontrol git chromium
-```
+    sudo snap install --classic code intellij-idea-ultimate phpstorm pycharm-professional go
 
-```
-sudo snap install --classic code intellij-idea-ultimate phpstorm pycharm-professional go
-
-sudo snap install rocketchat-desktop bitwarden discord drawio
-```
-
-```
-npm install -g terminalizer
-```
-
-### 20.04+
-
-```
-sudo apt install ripgrep 
-```
-
-### 18.04
-
-```
-sudo snap install ripgrep
-```
+    sudo snap install rocketchat-desktop bitwarden discord drawio
 
 nodejs
     curl -sL install-node.now.sh/lts | bash
 
 FZF
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf ~/.fzf/install
 
-```
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf ~/.fzf/install
-```
+    npm install -g terminalizer
+
+### 20.04+
+    sudo apt install ripgrep 
+
+### 18.04
+    sudo snap install ripgrep
+    sudo apt remove vim
+    git clone https://github.com/vim/vim.git $HOME/temp/ && \
+
+
 
 ---
 
@@ -75,15 +65,10 @@ You need to create an additional profile, if you only have one the setup script 
 ## ZSH
 
 ### Change shell to ZSH:
-
-```
-chsh -s /bin/zsh
-```
+    chsh -s /bin/zsh
 
 ### Theme
-```
-wget -P $ZSH_CUSTOM/themes/ "https://raw.githubusercontent.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme"
-```
+    wget -P $ZSH_CUSTOM/themes/ "https://raw.githubusercontent.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme"
 
 ### Plugins
 
