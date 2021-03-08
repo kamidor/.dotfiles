@@ -6,7 +6,7 @@ bindsym $mod+F1 exec --no-startup-id  /home/client/Documents/scripts/monitor.sh
 bindsym $mod+F2 exec --no-startup-id /home/client/Documents/scripts/monitor2.sh 
 bindsym $mod+ctrl+l exec --no-startup-id i3lock -f -c 000000
 
-# exec --no-startup-id xsetroot -solid "#202021"
+exec --no-startup-id xsetroot -solid "#202021"
 exec --no-startup-id xrandr \
 --output DP-4 --auto --primary \
 --output DP-3 --off \
@@ -180,7 +180,7 @@ client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
-client.background       #F8F8F2
+# client.background       
 
 
 bar {
