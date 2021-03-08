@@ -37,7 +37,7 @@ npm install -g terminalizer
 ### 20.04+
 
 ```
-sudo apt install ripgrep fzf
+sudo apt install ripgrep 
 ```
 
 ### 18.04
@@ -46,6 +46,9 @@ sudo apt install ripgrep fzf
 sudo snap install ripgrep
 ```
 
+nodejs
+    curl -sL install-node.now.sh/lts | bash
+
 FZF
 
 ```
@@ -53,6 +56,21 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf ~/.fzf/install
 ```
 
 ---
+
+## GTK Color Schemes 
+### Dracula
+    curl -fLo $HOME/.theme/Dracula.zip --create-dirs \
+    https://github.com/dracula/gtk/archive/master.zip
+
+    curl -fLo $HOME/.icons/Dracula.zip --create-dirs \                               
+    https://github.com/dracula/gtk/files/5214870/Dracula.zip
+
+    gunzip
+## Terminal
+### Color Scheme
+You need to create an additional profile, if you only have one the setup script will fail!
+    git clone https://github.com/dracula/gnome-terminal $HOME/temp/gnome-terminal\
+    && . /$HOME/temp/gnome-terminal/install.sh
 
 ## ZSH
 
@@ -78,11 +96,22 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-Installing Plugins
+### Change the color Scheme:
+Add to .vimrc
+    Plug 'dracula/vim', { 'as': 'dracula' }
+
+### Installing Plugins
 In VIM:
 ```
 :PlugInstall
 ```
+COC Plugins
+    :CocInstall coc-tabnine coc-json coc-phpls coc-yaml
 
 ----
 
+## MC
+Dracula
+mkdir -p ~/.local/share/mc/skins && cd ~/.local/share/mc/skins
+git clone https://github.com/dracula/midnight-commander.git $HOME/temp/dracula-mc/
+mv $HOME/temp/dracula-mc/skins/dracula256.ini $HOME/.local/share/mc/skins

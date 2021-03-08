@@ -1,19 +1,17 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="agnoster"
+ZSH_THEME="bullet-train"
 
 plugins=(git)
 plugins=(zshnotes)
 plugins=(you-should-use $plugins)
+plugins=(zsh-syntax-highlighting)
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $ZSH/oh-my-zsh.sh
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias soundcore="echo -E 'connect 08:EB:ED:5B:D7:84' | bluetoothctl"
-alias ls="ls -ltrs"
-alias ytaudio="youtube-dl -f bestaudio --download-archive $HOME/.config/downloaded.txt"
-
-function build() 
-{
-    cd $HOME/buildout/buildout-saar
-    . /bin/activate
-}
+BULLETTRAIN_PROMPT_ORDER=(
+  git
+  context
+  dir
+  time
+)
