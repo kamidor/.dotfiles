@@ -83,11 +83,11 @@ git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/
 ```
 
 ZshNotes
-```
-git clone https://github.com/jameshgrn/zshnotes/ ~/.oh-my-zsh/custom/plugins/zshnotes
-```
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-```
+    git clone https://github.com/jameshgrn/zshnotes/ ~/.oh-my-zsh/custom/plugins/zshnotes
+
+Synstax highlighting
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 
 ---
 
@@ -105,9 +105,8 @@ Add to .vimrc
 
 ### Installing Plugins
 In VIM:
-```
-:PlugInstall
-```
+    :PlugInstall
+
 COC Plugins
     :CocInstall coc-tabnine coc-json coc-phpls coc-yaml
 
@@ -115,6 +114,6 @@ COC Plugins
 
 ## MC
 Dracula
-mkdir -p ~/.local/share/mc/skins && cd ~/.local/share/mc/skins
-git clone https://github.com/dracula/midnight-commander.git $HOME/temp/dracula-mc/
-mv $HOME/temp/dracula-mc/skins/dracula256.ini $HOME/.local/share/mc/skins
+    mkdir -p ~/.local/share/mc/skins && cd ~/.local/share/mc/skins
+    git clone https://github.com/dracula/midnight-commander.git $HOME/temp/dracula-mc/
+    mv $HOME/temp/dracula-mc/skins/dracula256.ini $HOME/.local/share/mc/skins

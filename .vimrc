@@ -69,6 +69,8 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 set spell spelllang=en_us
 nnoremap <leader>f 1z=
 
+set noswapfile
+
 set nowrap
 set colorcolumn=85
 set encoding=utf8
