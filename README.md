@@ -154,6 +154,8 @@ COC Plugins
 Dracula
 ```
 mkdir -p ~/.local/share/mc/skins && cd ~/.local/share/mc/skins
+
 git clone https://github.com/dracula/midnight-commander.git $HOME/temp/dracula-mc/
+
 mv $HOME/temp/dracula-mc/skins/dracula256.ini $HOME/.local/share/mc/skins
 ```
