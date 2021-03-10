@@ -69,22 +69,26 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 set spell spelllang=en_us
 nnoremap <leader>f 1z=
 
-set noswapfile
 
 set nowrap
+set signcolumn=yes
 set colorcolumn=85
-set encoding=utf8
+
 set hidden
+set encoding=utf8
+
+syntax on
 set cmdheight=2
 set updatetime=300
 
+set noswapfile
 set nobackup
 set nowritebackup
-
-syntax on
+set undodir=~./vim/undodir
+set undofile
 
 set relativenumber 
-set scrolloff=3
+set scrolloff=8
 
 " Tab behavior
 set tabstop=4
