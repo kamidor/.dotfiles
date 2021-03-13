@@ -9,7 +9,6 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme dracula
 " -------------------------------
 
 set spell spelllang=en_us
@@ -143,6 +142,8 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 " -------------------------------
+
+colorscheme dracula
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
