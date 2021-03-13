@@ -1,14 +1,13 @@
 export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
 
 ZSH_THEME="bullet-train"
+source $ZSH/oh-my-zsh.sh
 
 HISTSIZE=100000
 SAVEHIST=100000
 
 plugins=(git
 zshnotes
-you-should-use $plugins
 zsh-autosuggestions
 zsh-syntax-highlighting
 )
