@@ -10,11 +10,13 @@ setopt inc_append_history
 setopt hist_reduce_blanks
 
 plugins=(git
+ssh-agent    
 zshnotes
 zsh-autosuggestions
 zsh-syntax-highlighting
 )
 
+zstyle :omz:plugins:ssh-agent agent-forwarding on
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5fff00,bg=cyan,bold,underline"
 
 BULLETTRAIN_PROMPT_ORDER=(
