@@ -1,3 +1,6 @@
+" -------------------------------
+"           True colors
+" -------------------------------
 " Enable 24-bit true colors if your terminal supports it.
 if (has("termguicolors"))
   " https://github.com/vim/vim/issues/993#issuecomment-255651605
@@ -6,6 +9,85 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+colorscheme dracula
+" -------------------------------
+
+set spell spelllang=en_us
+
+set nowrap
+set signcolumn=yes
+set colorcolumn=85
+set relativenumber 
+
+set hidden
+set encoding=utf8
+
+syntax on
+set cmdheight=2
+set updatetime=300
+
+set noswapfile
+set nobackup
+set nowritebackup
+set undodir=~./vim/undodir
+set undofile
+
+set scrolloff=8
+
+" Tab behavior
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4 
+set expandtab 
+set autoindent 
+
+" Search behavior
+set incsearch 
+set ignorecase
+set smartcase
+set hlsearch
+
+inoremap jk <ESC>
+let mapleader = ","
+
+" Autocorrect word under cursor  
+nnoremap <leader>f 1z=
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+map <C-b> :NERDTreeToggle
+" -------------------------------
+" Install Pluginmanager and load Plugins 
+" -------------------------------
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -client ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" -------------------------------
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug '~/.fzf'
+
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'vim-syntastic/syntastic'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'Raimondi/delimitMate'
+Plug 'mboughaba/i3config.vim'
+
+call plug#end()
+
+" -------------------------------
+"           NERDTree
+" -------------------------------
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
@@ -15,6 +97,9 @@ autocmd BufWinEnter * silent NERDTreeMirror
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 
+let NERDTreeShowHidden=1
+
+" -------------------------------
 "           COC
 " -------------------------------
 " Always show the signcolumn, otherwise it would shift the text each time
@@ -58,88 +143,6 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 " -------------------------------
-
-inoremap jk <ESC>
-let mapleader = ","
-
-map <C-b> :NERDTreeToggle
-nnoremap <leader>n :NERDTreeFocus<CR>
-
-" Fix spellings
-set spell spelllang=en_us
-nnoremap <leader>f 1z=
-
-
-set nowrap
-set signcolumn=yes
-set colorcolumn=85
-
-set hidden
-set encoding=utf8
-
-syntax on
-set cmdheight=2
-set updatetime=300
-
-set noswapfile
-set nobackup
-set nowritebackup
-set undodir=~./vim/undodir
-set undofile
-
-set relativenumber 
-set scrolloff=8
-
-" Tab behavior
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4 
-set expandtab 
- 
-set autoindent 
-runtime! indent.vim
-
-" Search behavior
-set incsearch 
-set ignorecase
-set smartcase
-set hlsearch
-
-" Install vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -client ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-
-" Loads Plugins
-" -------------------------------
-call plug#begin('~/.vim/plugged')
-
-Plug 'godlygeek/tabular'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
-Plug 'scrooloose/nerdtree'
-Plug 'bling/vim-airline'
-Plug 'dracula/vim', { 'as': 'dracula' }
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug '~/.fzf'
-
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-Plug 'vim-syntastic/syntastic'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'Raimondi/delimitMate'
-Plug 'mboughaba/i3config.vim'
-
-call plug#end()
-" -------------------------------
-
-colorscheme dracula
-
-let NERDTreeShowHidden=1
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
