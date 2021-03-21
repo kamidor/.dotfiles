@@ -9,6 +9,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+au FocusLost * :wa
 " -------------------------------
 
 set spell spelllang=en_us

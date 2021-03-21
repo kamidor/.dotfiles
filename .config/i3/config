@@ -18,10 +18,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 exec --no-startup-id xsetroot -solid "#202021"
-exec --no-startup-id xrandr \
---output DP-4 --auto --primary \
---output DP-3 --off \
---output DP-1 --off
 
 # Custom Keybinds
 bindsym $mod+Escape exec --no-startup-id /home/client/Documents/scripts/nomonitor.sh
@@ -127,6 +123,14 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# map workspace to monitor
+workspace 3 output DP-2-2 
+workspace 4 output DP-2-3 
+
+# Application specific workspace settings
+# for_window [class=""] move to workspace $ws4
+assign [class="jetbrains-phpstorm"] $ws4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
